@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface UseremailRepository extends CrudRepository<Useremail, Long>
 {
+    //query from join table
     List<Useremail> findAllByUser_Username(String name);
 }

@@ -23,15 +23,15 @@ public class UserController
 
     @Autowired
     private UserService userService;
-
-    // http://localhost:2019/users/users/?page=1&size=1
+//todo 2 this is how you query by adding Pageable
+    // http://localhost:2019/users/users/?page=0&size=5
     // http://localhost:2019/users/users/?sort=username,desc&sort=<field>,asc
     @GetMapping(value = "/users",
                 produces = {"application/json"})
     public ResponseEntity<?> listAllUsers(
             @PageableDefault(page = 0,
                              size = 5)
-                    Pageable pageable)
+                    Pageable pageable) //this is params for page size
     {
         List<User> myUsers = userService.findAll(pageable);
         return new ResponseEntity<>(myUsers,
@@ -42,6 +42,8 @@ public class UserController
     @GetMapping(value = "/allusers",
                 produces = {"application/json"})
     public ResponseEntity<?> reallyListAllUsers()
+
+
     {
         List<User> myUsers = userService.findAll(Pageable.unpaged());
         return new ResponseEntity<>(myUsers,
@@ -72,6 +74,7 @@ public class UserController
         return new ResponseEntity<>(u,
                                     HttpStatus.OK);
     }
+    //todo 5 this is how you add pageable to other queries same way as earlier steps
 
     // http://localhost:2019/users/user/name/like/da?sort=username
     @GetMapping(value = "/user/name/like/{userName}",

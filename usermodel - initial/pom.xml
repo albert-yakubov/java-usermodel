@@ -57,8 +57,7 @@
     </dependencies>
 
     <build>
-<!--        <finalName>${project.artifactId}</finalName>-->
-        <finalName>jrmmba-starthere</finalName>
+
 
         <plugins>
             <plugin>

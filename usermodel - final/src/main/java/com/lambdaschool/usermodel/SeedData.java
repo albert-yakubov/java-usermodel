@@ -41,6 +41,7 @@ public class SeedData implements CommandLineRunner
 
         // admin, data, user
         ArrayList<UserRoles> admins = new ArrayList<>();
+
         admins.add(new UserRoles(new User(),
                                  r1));
         admins.add(new UserRoles(new User(),
@@ -102,7 +103,7 @@ public class SeedData implements CommandLineRunner
                            "puttat@school.lambda",
                            users);
         userService.save(u4);
-
+// we have to recreate the list every time we use it.
         users = new ArrayList<>();
         users.add(new UserRoles(new User(),
                                 r2));

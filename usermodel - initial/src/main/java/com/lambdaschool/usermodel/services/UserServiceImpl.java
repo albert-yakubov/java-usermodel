@@ -4,6 +4,7 @@ import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.models.Useremail;
 import com.lambdaschool.usermodel.repository.RoleRepository;
 import com.lambdaschool.usermodel.repository.UserRepository;
+import com.lambdaschool.usermodel.views.UserNameCountEmails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -128,5 +129,10 @@ public class UserServiceImpl implements UserService
         }
 
         return userrepos.save(currentUser);
+    }
+
+    @Override
+    public List<UserNameCountEmails> getCountUserEmails() {
+        return userrepos.getCountUserEmeails();
     }
 }

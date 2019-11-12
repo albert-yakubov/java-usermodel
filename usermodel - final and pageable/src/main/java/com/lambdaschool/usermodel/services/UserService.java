@@ -7,8 +7,9 @@ import java.util.List;
 
 public interface UserService
 {
+    //todo 3 add Pageable param
     List<User> findAll(Pageable pageable);
-
+//todo 5.1 add it to service
     List<User> findByNameContaining(String username,
                                     Pageable pageable);
 

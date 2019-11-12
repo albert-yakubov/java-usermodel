@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService
         return userrepos.findByUsernameContainingIgnoreCase(username.toLowerCase(), pageable
                                                           );
     }
-
+// todo 4 add Pageble to find all here
     @Override
     public List<User> findAll(Pageable pageable)
     {

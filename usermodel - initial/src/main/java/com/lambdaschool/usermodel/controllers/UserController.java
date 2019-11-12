@@ -120,8 +120,8 @@ public class UserController
 
 
     // http://localhost:2019/users/user/7
-/*
 
+/*
         {
             "username": "cinabun",
             "primaryemail": "cinabun@lambdaschool.home",
@@ -191,5 +191,12 @@ public class UserController
         //                                roleid);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+    //endpoint to check how many users and emails they have
+    // http
+    @GetMapping(value = "/user/email/count",
+    produces = {"application/json"})
+    public ResponseEntity<?> getUserEmails(){
+        return new ResponseEntity<>(UserService.getCountUserEmails(), HttpStatus.OK);
     }
 }
