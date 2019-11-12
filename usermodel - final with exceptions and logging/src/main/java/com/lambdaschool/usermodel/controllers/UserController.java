@@ -24,6 +24,7 @@ import java.util.List;
 @Loggable
 public class UserController
 {
+    //todo 10 add logger make sure LSF4J
     private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
 
     @Autowired

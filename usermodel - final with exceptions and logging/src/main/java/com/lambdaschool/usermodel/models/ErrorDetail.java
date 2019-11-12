@@ -9,16 +9,18 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+//todo 1 this is how to set up how the user looks at the error
+//todo 1 note this is not a table , never saves
 @Loggable
 // adapted from https://tools.ietf.org/html/rfc7807
 public class ErrorDetail
 {
     private String title;
-    private int status;
+    private int status; //code number
     private String detail;
     private String timestamp;
     private String developerMessage;
+    // list of errors
     private Map<String, List<ValidationError>> errors = new HashMap<String, List<ValidationError>>();
 
     public String getTitle()
@@ -55,7 +57,7 @@ public class ErrorDetail
     {
         return timestamp;
     }
-
+//todo 3 bring in the time stamp in long format and convert to string
     public void setTimestamp(Long timestamp)
     {
         this.timestamp = new SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z").format(new Date(timestamp));

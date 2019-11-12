@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService
                  .forEachRemaining(list::add);
         return list;
     }
-
+//todo 5.3 change the exceptions where the exceptions are
     @Transactional
     @Override
     public void delete(long id)

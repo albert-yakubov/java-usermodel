@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
+//todo 4 create handler to handle exc. in REST API
 @Loggable
 // bean shared across controller classes
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -42,13 +42,13 @@ import java.util.List;
 public class RestExceptionHandler extends ResponseEntityExceptionHandler
 {
     private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
-
+// todo 4.1 create a constructor for exception handling
     public RestExceptionHandler()
     {
         super();
     }
 
-
+//todo 6 this is a standard setup
     @ExceptionHandler({ResourceNotFoundException.class, EntityNotFoundException.class})
     public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException rnfe,
                                                              HttpServletRequest request)
@@ -84,7 +84,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler
                                     HttpStatus.BAD_REQUEST);
     }
 
-
+// todo 7 u can add all possible ovverrrides for exception handling
     @Override
     protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex,
                                                         HttpHeaders headers,

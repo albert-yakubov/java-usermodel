@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
  * Created by satyendra on 11/7/16.
  * http://www.tothenew.com/blog/logging-with-spring-aop-and-custom-annotations-in-java-application/
  */
-
+//todo 12 logging implementation
 @Component
 @Aspect
 public class LoggingAspect

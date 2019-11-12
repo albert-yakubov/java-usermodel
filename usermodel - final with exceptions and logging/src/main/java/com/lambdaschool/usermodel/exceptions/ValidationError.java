@@ -1,9 +1,9 @@
 package com.lambdaschool.usermodel.exceptions;
-
+// todo 2 validation error (no constructors because there is one by default)
 public class ValidationError
 {
-    private String Code;
-    private String message;
+    private String Code; //whats being changed
+    private String message; //whats the problem
 
     public String getCode()
     {

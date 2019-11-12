@@ -9,6 +9,9 @@ import java.lang.annotation.*;
  * Created by satyendra on 11/7/16.
  * http://www.tothenew.com/blog/logging-with-spring-aop-and-custom-annotations-in-java-application/
  */
+
+//todo 11 create my own annotation
+    //
 @Component
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

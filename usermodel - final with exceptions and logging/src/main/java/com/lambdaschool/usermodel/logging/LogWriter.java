@@ -8,7 +8,7 @@ import org.springframework.boot.logging.LogLevel;
  * Created by satyendra on 11/7/16.
  * http://www.tothenew.com/blog/logging-with-spring-aop-and-custom-annotations-in-java-application/
  */
-
+//todo 13 now you can log a class
 public class LogWriter
 {
     private static final Logger logger = LoggerFactory.getLogger(LogWriter.class);

@@ -3,6 +3,7 @@ package com.lambdaschool.usermodel;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
+import com.lambdaschool.usermodel.logging.Loggable;
 import com.lambdaschool.usermodel.models.Role;
 import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.models.UserRoles;
@@ -16,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Locale;
-
+@Loggable
 @Transactional
 @Component
 public class SeedData implements CommandLineRunner

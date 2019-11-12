@@ -15,9 +15,11 @@ public class UserModelApplication
 
     public static void main(String[] args)
     {
+        //todo 8 adjust the context to spring
         ApplicationContext ctx = SpringApplication.run(UserModelApplication.class,
                                                        args);
 
+        //todo 8.1 find the specific bean and set our own (name sure to add annotation on top EnableWebMvc)
         DispatcherServlet dispatcherServlet = (DispatcherServlet) ctx.getBean("dispatcherServlet");
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
     }
