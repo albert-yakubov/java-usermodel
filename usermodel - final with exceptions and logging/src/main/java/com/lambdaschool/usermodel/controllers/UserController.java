@@ -4,6 +4,9 @@ import com.lambdaschool.usermodel.handlers.RestExceptionHandler;
 import com.lambdaschool.usermodel.logging.Loggable;
 import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.services.UserService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +22,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/users")
 @Loggable
+
 public class UserController
 {
     //todo 10 add logger make sure LSF4J
@@ -29,6 +34,16 @@ public class UserController
 
     @Autowired
     private UserService userService;
+    @ApiOperation(value = "retrieving something", response = User.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", dataType = "integer", paramType = "query",
+                    value = "Results page you want to retrieve (0..N)"),
+            @ApiImplicitParam(name = "size", dataType = "integer", paramType = "query",
+                    value = "Number of records per page."),
+            @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
+                    value = "Sorting criteria in the format: property(,asc|desc). " +
+                            "Default sort order is ascending. " +
+                            "Multiple sort criteria are supported.")})
 
     // http://localhost:2019/users/users
     @GetMapping(value = "/users",
